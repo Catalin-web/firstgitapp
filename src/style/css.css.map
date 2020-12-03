@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAAA,cAAc;ACAd,cAAc;AEAd,cAAc;AHId,AAAA,CAAC,CAAC;EACD,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACV;;AACD,AAAA,IAAI,CAAC;EACJ,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACV",
+    "sources": [
+        "css.scss",
+        "_app1.scss",
+        "_footer.scss",
+        "_home.scss"
+    ],
+    "names": [],
+    "file": "css.css"
+}
