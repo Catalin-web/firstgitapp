@@ -2,12 +2,12 @@
 
 import React from 'react';
 
-function Home() {
+function App2() {
 	return (
 		<>
-			<h1>Home</h1>
+			<h1>App2</h1>
 		</>
 	);
 }
 
-export default Home;
+export default App2;
