@@ -18,10 +18,10 @@ function Navbar() {
 					<a href='/' className='home'>
 						Home
 					</a>
-					<a href='/secondpage' className='schedule'>
+					<a href='/secondpage' className='secondpage'>
 						First page
 					</a>
-					<a href='/thirdpage' className='wallet'>
+					<a href='/thirdpage' className='thirdpage'>
 						Second page
 					</a>
 					<div className='dropdown applic'>
@@ -30,13 +30,13 @@ function Navbar() {
 							<i className='fa fa-caret-down'></i>
 						</button>
 						<div className='dropdown-content'>
-							<a href='/app1' className='istorie'>
+							<a href='/app1' className='app1'>
 								App 1
 							</a>
-							<a href='/app2' className='geografie'>
+							<a href='/app2' className='app2'>
 								App 2
 							</a>
-							<a href='/app3' className='engleza'>
+							<a href='/app3' className='app3'>
 								App 3
 							</a>
 						</div>
