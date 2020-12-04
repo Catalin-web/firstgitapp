@@ -71,10 +71,10 @@ class Video extends Component {
 				.then(() => (this.videoAvailable = true))
 				.catch(() => (this.videoAvailable = false));
 
-			await navigator.mediaDevices
-				.getUserMedia({ audio: true })
-				.then(() => (this.audioAvailable = true))
-				.catch(() => (this.audioAvailable = false));
+			// await navigator.mediaDevices
+			// 	.getUserMedia({ audio: true })
+			// 	.then(() => (this.audioAvailable = true))
+			// 	.catch(() => (this.audioAvailable = false));
 
 			if (navigator.mediaDevices.getDisplayMedia) {
 				this.setState({ screenAvailable: true });
@@ -643,14 +643,20 @@ class Video extends Component {
 								style={{
 									borderStyle: 'solid',
 									borderColor: '#bdbdbd',
+<<<<<<< HEAD
 									objectFit: 'fit',
 									width: '50%',
 									height: '20%',
+=======
+									objectFit: 'fill',
+									width: '60%',
+									height: 'auto',
+>>>>>>> da205af24dc74720599abfd0db3fd8c74f4c2387
 								}}></video>
 						</div>
 					</div>
 				) : (
-					<div>
+					<div className='tot'>
 						<Modal
 							show={this.state.showModal}
 							onHide={this.closeChat}
@@ -694,7 +700,10 @@ class Video extends Component {
 
 						<div className='container'>
 							<div style={{ paddingTop: '20px' }}>
-								<Input value={window.location.href} disable='true'></Input>
+								<Input
+									className='inputlink'
+									value={window.location.href}
+									disable='true'></Input>
 								<Button
 									style={{
 										backgroundColor: '#3f51b5',
@@ -704,16 +713,18 @@ class Video extends Component {
 										width: '120px',
 										fontSize: '10px',
 									}}
-									onClick={this.copyUrl}>
+									onClick={() => {
+										this.copyUrl();
+									}}>
 									Copy invite link
 								</Button>
-								<Intrebari></Intrebari>
 							</div>
+							<Intrebari></Intrebari>
 
 							<Row
 								id='main'
 								className='flex-container'
-								style={{ margin: 0, padding: 0 }}>
+								style={{ padding: 0 }}>
 								<video
 									id='my-video'
 									ref={this.localVideoref}
@@ -723,7 +734,7 @@ class Video extends Component {
 										borderStyle: 'solid',
 										borderColor: '#bdbdbd',
 										margin: '10px',
-										// objectFit: 'fill',
+										objectFit: 'fill',
 										width: '100%',
 										height: '100%',
 									}}></video>
@@ -737,7 +748,9 @@ class Video extends Component {
 								}}>
 								<IconButton
 									style={{ color: '#424242' }}
-									onClick={this.handleVideo}>
+									onClick={(e) => {
+										this.handleVideo();
+									}}>
 									{this.state.video === true ? (
 										<VideocamIcon />
 									) : (
@@ -753,21 +766,12 @@ class Video extends Component {
 
 								<IconButton
 									style={{ color: '#424242' }}
-									onClick={this.handleAudio}>
+									onClick={(e) => {
+										this.handleAudio();
+										e.preventDefault();
+									}}>
 									{this.state.audio === true ? <MicIcon /> : <MicOffIcon />}
 								</IconButton>
-
-								{this.state.screenAvailable === true ? (
-									<IconButton
-										style={{ color: '#424242' }}
-										onClick={this.handleScreen}>
-										{this.state.screen === true ? (
-											<ScreenShareIcon />
-										) : (
-											<StopScreenShareIcon />
-										)}
-									</IconButton>
-								) : null}
 
 								<Badge
 									badgeContent={this.state.newmessages}
