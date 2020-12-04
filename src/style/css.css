@@ -36,6 +36,12 @@ body {
   color: black;
 }
 
+.indiv .active {
+  opacity: 0;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
 /** @format */
 .col {
   float: left;
