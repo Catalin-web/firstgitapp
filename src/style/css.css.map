@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAAA,cAAc;ACAd,cAAc",
+    "sources": [
+        "css.scss",
+        "_bugnar.scss"
+    ],
+    "names": [],
+    "file": "css.css"
+}
