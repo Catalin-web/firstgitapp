@@ -13,13 +13,8 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import './Home.css';
 
 class Home extends Component {
-<<<<<<< HEAD
 	constructor(props) {
 		super(props);
-=======
-	constructor (props) {
-		super(props)
->>>>>>> 0e55c35f7649cdf50750d9e6fee295b37f37a86b
 		this.state = {
 			url: '',
 		};
@@ -40,21 +35,12 @@ class Home extends Component {
 	render() {
 		return (
 			<div>
-<<<<<<< HEAD
 				<Navbar bg='dark' variant='dark' style={{ textAlign: 'center' }}>
 					<Navbar.Brand href='#home'>Pandating</Navbar.Brand>
 					<Nav className='center-block'>
 						<Nav.Link href='#home'>Home</Nav.Link>
 						<Nav.Link href='#features'>Features</Nav.Link>
 						<Nav.Link href='#pricing'>Pricing</Nav.Link>
-=======
-				<Navbar bg="dark" variant="dark" style={{ textAlign: "center" }}>
-					<Navbar.Brand href="#home">Pandating</Navbar.Brand>
-					<Nav className="center-block">
-						<Nav.Link href="#home">Home</Nav.Link>
-						<Nav.Link href="#features">Features</Nav.Link>
-						<Nav.Link href="#pricing">Pricing</Nav.Link>
->>>>>>> 0e55c35f7649cdf50750d9e6fee295b37f37a86b
 					</Nav>
 				</Navbar>
 
