@@ -1,7 +1,7 @@
 /** @format */
 import React, { useState } from 'react';
 
-function Intrebari() {
+function Intrebari({ utilizatori }) {
 	const intrebari = [
 		'Ce descoperire crezi că ar schimba complet viața oamenilor?',
 		'Ce înseamnă pentru tine adevărata fericire?',
@@ -26,6 +26,7 @@ function Intrebari() {
 		console.log('final');
 	};
 	const afisareintrebare = () => {
+		console.log(utilizatori);
 		var i, index;
 		for (i = 0; i <= 14; i++) {
 			if (intrebare_afisare == intrebari[i]) {

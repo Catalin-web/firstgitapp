@@ -652,7 +652,7 @@ class Video extends Component {
 						</div>
 					</div>
 				) : (
-					<div>
+					<div className='tot'>
 						<Modal
 							show={this.state.showModal}
 							onHide={this.closeChat}
@@ -696,7 +696,10 @@ class Video extends Component {
 
 						<div className='container'>
 							<div style={{ paddingTop: '20px' }}>
-								<Input value={window.location.href} disable='true'></Input>
+								<Input
+									className='inputlink'
+									value={window.location.href}
+									disable='true'></Input>
 								<Button
 									style={{
 										backgroundColor: '#3f51b5',
@@ -706,7 +709,9 @@ class Video extends Component {
 										width: '120px',
 										fontSize: '10px',
 									}}
-									onClick={this.copyUrl}>
+									onClick={() => {
+										this.copyUrl();
+									}}>
 									Copy invite link
 								</Button>
 							</div>
