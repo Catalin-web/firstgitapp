@@ -1,5 +1,5 @@
 /** @format */
-import React from 'react';
+import React, { useState } from 'react';
 
 function Intrebari() {
 	const intrebari = [
@@ -19,15 +19,52 @@ function Intrebari() {
 		'Care este cel mai frumos lucru care ți s-a întâmplat luna aceasta? Vorbește-mi despre el.',
 		'Îți place să citești cărți? Ce impact au asupra ta?',
 	];
+	const [intrebare_afisare, setintrebare_afisare] = useState(
+		intrebari[0],
+	);
+	const finally_conv = () => {
+		console.log('final');
+	};
+	const afisareintrebare = () => {
+		var i, index;
+		for (i = 0; i <= 14; i++) {
+			if (intrebare_afisare == intrebari[i]) {
+				index = i;
+			}
+		}
+		if (index <= 13) {
+			setintrebare_afisare(intrebari[index + 1]);
+		} else {
+			finally_conv();
+		}
+	};
 	return (
 		<>
 			<div className='indiv'>
 				<div className='intrebari group'>
-					<div className='intrebaridiv col col-6'>
-						<span>{intrebari[1]}</span>
-					</div>
-					<div className='btndiv col col-6'>
-						<button>Next</button>
+					<div className='intrebaridiv '>
+						<div className='intrebare1'>
+							<span className='intrebarespan'>{intrebare_afisare}</span>
+						</div>
+						<button
+							className='buttonnext'
+							onClick={() => {
+								afisareintrebare();
+								document.querySelector('.buttonnext').classList.add('active');
+								document
+									.querySelector('.intrebarespan')
+									.classList.add('active2');
+								setTimeout(() => {
+									document
+										.querySelector('.buttonnext')
+										.classList.remove('active');
+									document
+										.querySelector('.intrebarespan')
+										.classList.remove('active2');
+								}, 600);
+							}}>
+							Next
+						</button>
 					</div>
 				</div>
 			</div>
