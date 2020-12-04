@@ -643,15 +643,12 @@ class Video extends Component {
 								style={{
 									borderStyle: 'solid',
 									borderColor: '#bdbdbd',
-<<<<<<< HEAD
 									objectFit: 'fit',
 									width: '50%',
 									height: '20%',
-=======
 									objectFit: 'fill',
 									width: '60%',
 									height: 'auto',
->>>>>>> da205af24dc74720599abfd0db3fd8c74f4c2387
 								}}></video>
 						</div>
 					</div>
