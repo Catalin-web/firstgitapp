@@ -3,17 +3,30 @@ body {
 	overflow-x: hidden;
 }
 .indiv {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	margin-left: 20%;
-	margin-right: 20%;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	white-space: nowrap;
 	span {
 		padding: 10px;
 		padding-left: 15px;
 		padding-right: 15px;
 		background-color: rgb(63, 81, 181);
-		border-radius: 30px;
+		border-radius: 20px;
 		color: whitesmoke;
 		font-size: 15px;
+	}
+	.btndiv {
+		button {
+			border-radius: 20px;
+			padding: 10px;
+			transform: translateY(-5px);
+			background-color: rgb(63, 81, 181);
+			color: whitesmoke;
+			border: none;
+			transition: all 0.5s;
+		}
+		button:hover {
+			color: black;
+		}
 	}
 }
