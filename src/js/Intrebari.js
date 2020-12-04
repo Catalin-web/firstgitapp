@@ -4,13 +4,16 @@ class Example extends React.Component {
 	constructor(props) {
 		super(props);
 		this.afisareintrebare = this.props.afisareintrebare;
-		this.state = { time: {}, seconds: 10 };
+		this.state = {
+			time: {},
+			seconds: 10,
+			clicked2: false,
+		};
 		this.clicked = false;
 		this.timer = 0;
 		this.startTimer = this.startTimer.bind(this);
 		this.countDown = this.countDown.bind(this);
 	}
-
 	secondsToTime(secs) {
 		let hours = Math.floor(secs / (60 * 60));
 
@@ -47,8 +50,8 @@ class Example extends React.Component {
 		});
 
 		if (seconds == 0) {
-			this.setState({ clicked2: false });
 			clearInterval(this.timer);
+			this.setState({ clicked2: false });
 			document.querySelector('.butonnext').style.background = '#4022c6';
 		}
 	}
@@ -59,7 +62,9 @@ class Example extends React.Component {
 				<button
 					className='butonnext'
 					onClick={() => {
+						this.afisareintrebare = this.props.afisareintrebare;
 						this.clicked = true;
+						this.setState({ clicked2: true });
 						if (this.state.seconds == 10) {
 							this.setState({
 								time: this.secondsToTime(10),
@@ -78,16 +83,19 @@ class Example extends React.Component {
 							this.countDown = this.countDown.bind(this);
 							this.timer = setInterval(this.countDown, 1000);
 							this.render();
-							this.afisareintrebare = this.props.afisareintrebare;
 							document.querySelector('.butonnext').style.background =
 								'#dc3d82';
 
 							this.afisareintrebare();
 						} else alert('Just speak lol');
 					}}>
-					{this.clicked ? <span>Next question</span> : <span>Start</span>}
+					{this.clicked ? (
+						<span className='button2'>Next question</span>
+					) : (
+						<span className='button2'>Start</span>
+					)}
 				</button>
-				{this.clicked ? (
+				{this.state.clicked2 ? (
 					<span className='timeleft'>
 						Minutes: {this.state.time.m} Seconds: {this.state.time.s}
 					</span>
@@ -121,6 +129,7 @@ function Intrebari() {
 		intrebari[0],
 	);
 	const finally_conv = () => {
+		document.querySelector('.button2').textContent = 'Exit';
 		console.log('final');
 	};
 	const afisareintrebare = () => {
@@ -130,6 +139,12 @@ function Intrebari() {
 				index = i;
 				break;
 			}
+		}
+		if (index == 12) {
+			document.querySelector('.button2').textContent = 'Last Question';
+			setTimeout(() => {
+				document.querySelector('.button2').textContent = 'Exit';
+			}, 10000);
 		}
 		if (index <= 13) {
 			setintrebare_afisare(intrebari[index + 1]);
