@@ -1,7 +1,105 @@
 /** @format */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+class Example extends React.Component {
+	constructor(props) {
+		super(props);
+		this.afisareintrebare = this.props.afisareintrebare;
+		this.state = { time: {}, seconds: 10 };
+		this.clicked = false;
+		this.timer = 0;
+		this.startTimer = this.startTimer.bind(this);
+		this.countDown = this.countDown.bind(this);
+	}
 
-function Intrebari({ utilizatori }) {
+	secondsToTime(secs) {
+		let hours = Math.floor(secs / (60 * 60));
+
+		let divisor_for_minutes = secs % (60 * 60);
+		let minutes = Math.floor(divisor_for_minutes / 60);
+
+		let divisor_for_seconds = divisor_for_minutes % 60;
+		let seconds = Math.ceil(divisor_for_seconds);
+
+		let obj = {
+			h: hours,
+			m: minutes,
+			s: seconds,
+		};
+		return obj;
+	}
+
+	componentDidMount() {
+		let timeLeftVar = this.secondsToTime(this.state.seconds);
+		this.setState({ time: timeLeftVar });
+	}
+
+	startTimer() {
+		if (this.timer == 0 && this.state.seconds > 0) {
+			this.timer = setInterval(this.countDown, 1000);
+		}
+	}
+
+	countDown() {
+		let seconds = this.state.seconds - 1;
+		this.setState({
+			time: this.secondsToTime(seconds),
+			seconds: seconds,
+		});
+
+		if (seconds == 0) {
+			this.setState({ clicked2: false });
+			clearInterval(this.timer);
+			document.querySelector('.butonnext').style.background = '#4022c6';
+		}
+	}
+
+	render() {
+		return (
+			<div>
+				<button
+					className='butonnext'
+					onClick={() => {
+						this.clicked = true;
+						if (this.state.seconds == 10) {
+							this.setState({
+								time: this.secondsToTime(10),
+								seconds: 10,
+							});
+							this.startTimer();
+							this.question = true;
+							document.querySelector('.butonnext').style.background =
+								'#dc3d82';
+						} else if (this.state.seconds == 0) {
+							this.setState({
+								time: this.secondsToTime(10),
+								seconds: 10,
+							});
+							this.startTimer = this.startTimer.bind(this);
+							this.countDown = this.countDown.bind(this);
+							this.timer = setInterval(this.countDown, 1000);
+							this.render();
+							this.afisareintrebare = this.props.afisareintrebare;
+							document.querySelector('.butonnext').style.background =
+								'#dc3d82';
+
+							this.afisareintrebare();
+						} else alert('Just speak lol');
+					}}>
+					{this.clicked ? <span>Next question</span> : <span>Start</span>}
+				</button>
+				{this.clicked ? (
+					<span className='timeleft'>
+						Minutes: {this.state.time.m} Seconds: {this.state.time.s}
+					</span>
+				) : (
+					''
+				)}
+			</div>
+		);
+	}
+}
+
+function Intrebari() {
 	const intrebari = [
 		'Ce descoperire crezi că ar schimba complet viața oamenilor?',
 		'Ce înseamnă pentru tine adevărata fericire?',
@@ -26,11 +124,11 @@ function Intrebari({ utilizatori }) {
 		console.log('final');
 	};
 	const afisareintrebare = () => {
-		console.log(utilizatori);
 		var i, index;
 		for (i = 0; i <= 14; i++) {
 			if (intrebare_afisare == intrebari[i]) {
 				index = i;
+				break;
 			}
 		}
 		if (index <= 13) {
@@ -39,6 +137,10 @@ function Intrebari({ utilizatori }) {
 			finally_conv();
 		}
 	};
+	const timp = 6000;
+	const timp2 = 1000;
+	const [ok, setOk] = useState(true);
+
 	return (
 		<>
 			<div className='indiv'>
@@ -47,25 +149,8 @@ function Intrebari({ utilizatori }) {
 						<div className='intrebare1'>
 							<span className='intrebarespan'>{intrebare_afisare}</span>
 						</div>
-						<button
-							className='buttonnext'
-							onClick={() => {
-								afisareintrebare();
-								document.querySelector('.buttonnext').classList.add('active');
-								document
-									.querySelector('.intrebarespan')
-									.classList.add('active2');
-								setTimeout(() => {
-									document
-										.querySelector('.buttonnext')
-										.classList.remove('active');
-									document
-										.querySelector('.intrebarespan')
-										.classList.remove('active2');
-								}, 600);
-							}}>
-							Next
-						</button>
+
+						<Example afisareintrebare={afisareintrebare}></Example>
 					</div>
 				</div>
 			</div>

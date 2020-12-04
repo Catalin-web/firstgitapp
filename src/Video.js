@@ -702,7 +702,7 @@ class Video extends Component {
 									disable='true'></Input>
 								<Button
 									style={{
-										backgroundColor: '#3f51b5',
+										backgroundColor: '#4022c6',
 										color: 'whitesmoke',
 										marginLeft: '20px',
 										marginTop: '10px',
