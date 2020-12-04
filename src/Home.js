@@ -5,7 +5,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import "./Home.css"
 
 class Home extends Component {
-  	constructor (props) {
+	constructor (props) {
 		super(props)
 		this.state = {
 			url: ''
@@ -28,12 +28,12 @@ class Home extends Component {
 		return (
 			<div>
 				<Navbar bg="dark" variant="dark" style={{ textAlign: "center" }}>
-						<Navbar.Brand href="#home">Pandating</Navbar.Brand>
-						<Nav className="center-block">
-							<Nav.Link href="#home">Home</Nav.Link>
-							<Nav.Link href="#features">Features</Nav.Link>
-							<Nav.Link href="#pricing">Pricing</Nav.Link>
-						</Nav>
+					<Navbar.Brand href="#home">Pandating</Navbar.Brand>
+					<Nav className="center-block">
+						<Nav.Link href="#home">Home</Nav.Link>
+						<Nav.Link href="#features">Features</Nav.Link>
+						<Nav.Link href="#pricing">Pricing</Nav.Link>
+					</Nav>
 				</Navbar>
 
 				<Jumbotron>
