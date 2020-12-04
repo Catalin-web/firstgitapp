@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,cAAc;ACAd,cAAc",
+    "mappings": "AAAA,cAAc;ACAd,cAAc;AACd,AAAA,IAAI,CAAC;EACJ,UAAU,EAAE,MAAM;CAClB",
     "sources": [
         "css.scss",
         "_bugnar.scss"

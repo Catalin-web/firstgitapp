@@ -653,60 +653,6 @@ class Video extends Component {
 					</div>
 				) : (
 					<div>
-						<div
-							className='btn-down'
-							style={{
-								backgroundColor: 'whitesmoke',
-								color: 'whitesmoke',
-								textAlign: 'center',
-							}}>
-							<IconButton
-								style={{ color: '#424242' }}
-								onClick={this.handleVideo}>
-								{this.state.video === true ? (
-									<VideocamIcon />
-								) : (
-									<VideocamOffIcon />
-								)}
-							</IconButton>
-
-							<IconButton
-								style={{ color: '#f44336' }}
-								onClick={this.handleEndCall}>
-								<CallEndIcon />
-							</IconButton>
-
-							<IconButton
-								style={{ color: '#424242' }}
-								onClick={this.handleAudio}>
-								{this.state.audio === true ? <MicIcon /> : <MicOffIcon />}
-							</IconButton>
-
-							{this.state.screenAvailable === true ? (
-								<IconButton
-									style={{ color: '#424242' }}
-									onClick={this.handleScreen}>
-									{this.state.screen === true ? (
-										<ScreenShareIcon />
-									) : (
-										<StopScreenShareIcon />
-									)}
-								</IconButton>
-							) : null}
-
-							<Badge
-								badgeContent={this.state.newmessages}
-								max={999}
-								color='secondary'
-								onClick={this.openChat}>
-								<IconButton
-									style={{ color: '#424242' }}
-									onClick={this.openChat}>
-									<ChatIcon />
-								</IconButton>
-							</Badge>
-						</div>
-
 						<Modal
 							show={this.state.showModal}
 							onHide={this.closeChat}
@@ -763,6 +709,7 @@ class Video extends Component {
 									onClick={this.copyUrl}>
 									Copy invite link
 								</Button>
+								<Intrebari></Intrebari>
 							</div>
 
 							<Row
@@ -779,11 +726,62 @@ class Video extends Component {
 										borderColor: '#bdbdbd',
 										margin: '10px',
 										objectFit: 'fill',
-										width: '100%',
 										height: '100%',
 									}}></video>
 							</Row>
-							<Intrebari></Intrebari>
+							<div
+								className='btn-down'
+								style={{
+									backgroundColor: 'whitesmoke',
+									color: 'whitesmoke',
+									textAlign: 'center',
+								}}>
+								<IconButton
+									style={{ color: '#424242' }}
+									onClick={this.handleVideo}>
+									{this.state.video === true ? (
+										<VideocamIcon />
+									) : (
+										<VideocamOffIcon />
+									)}
+								</IconButton>
+
+								<IconButton
+									style={{ color: '#f44336' }}
+									onClick={this.handleEndCall}>
+									<CallEndIcon />
+								</IconButton>
+
+								<IconButton
+									style={{ color: '#424242' }}
+									onClick={this.handleAudio}>
+									{this.state.audio === true ? <MicIcon /> : <MicOffIcon />}
+								</IconButton>
+
+								{this.state.screenAvailable === true ? (
+									<IconButton
+										style={{ color: '#424242' }}
+										onClick={this.handleScreen}>
+										{this.state.screen === true ? (
+											<ScreenShareIcon />
+										) : (
+											<StopScreenShareIcon />
+										)}
+									</IconButton>
+								) : null}
+
+								<Badge
+									badgeContent={this.state.newmessages}
+									max={999}
+									color='secondary'
+									onClick={this.openChat}>
+									<IconButton
+										style={{ color: '#424242' }}
+										onClick={this.openChat}>
+										<ChatIcon />
+									</IconButton>
+								</Badge>
+							</div>
 						</div>
 					</div>
 				)}
