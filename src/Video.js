@@ -596,9 +596,7 @@ class Video extends Component {
 		return (
 			<div>
 				{this.state.askForUsername === true ? (
-					<div>
-						<div
-							style={{
+					<div> <div style={{
 								background: 'white',
 								width: '30%',
 								height: 'auto',
@@ -646,7 +644,7 @@ class Video extends Component {
 									borderStyle: 'solid',
 									borderColor: '#bdbdbd',
 									objectFit: 'fill',
-									width: '60%',
+									width: '40%',
 									height: 'auto',
 								}}></video>
 						</div>
