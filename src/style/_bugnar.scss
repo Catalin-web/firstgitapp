@@ -2,3 +2,18 @@
 body {
 	overflow-x: hidden;
 }
+.indiv {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20%;
+	margin-right: 20%;
+	span {
+		padding: 10px;
+		padding-left: 15px;
+		padding-right: 15px;
+		background-color: rgb(63, 81, 181);
+		border-radius: 30px;
+		color: whitesmoke;
+		font-size: 15px;
+	}
+}
