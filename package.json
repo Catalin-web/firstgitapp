@@ -19,6 +19,7 @@
 		"imagemin-cli": "^3.0.0",
 		"mdbreact": "^5.0.0",
 		"mkdirp": "^0.5.1",
+		"netlify-cli": "^2.69.1",
 		"node-sass": "^4.9.2",
 		"nodemon": "^2.0.2",
 		"npm-run-all": "^4.1.3",
