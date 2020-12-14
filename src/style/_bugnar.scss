@@ -1,7 +1,6 @@
 /** @format */
 
-/** @format */
-$movinchis: #4022c6;
+$movinchis: #d5ddfd;
 $mov: #5e36de;
 $rozdeschis: #e27cae;
 $rozaprins: #dc3d82;
@@ -14,7 +13,7 @@ body {
 	margin-top: 40px;
 	margin-bottom: 10px;
 	span {
-		color: whitesmoke;
+		color: $mov;
 		font-size: 15px;
 	}
 	.intrebare1 {
@@ -40,7 +39,7 @@ body {
 		border-radius: 20px;
 		padding: 10px;
 		background-color: $movinchis;
-		color: whitesmoke;
+		color: $mov;
 		border: none;
 		transition: all 0.5s;
 	}
@@ -60,8 +59,11 @@ body {
 	}
 }
 .container {
+	max-width: 20000px;
 	.timeleft {
-		color: $movinchis;
+		span {
+			color: $rozaprins;
+		}
 	}
 	.MuiInputBase-root {
 		color: $movinchis;
@@ -88,9 +90,156 @@ body {
 		border-bottom: 2px solid $movinchis;
 		pointer-events: none;
 	}
-}
-.flex-container {
-	@media only screen and (max-width: 600px) {
-		width: 100%;
+	.senddiv {
+		transform: translateY(15px);
+		.sendsus {
+			color: $movinchis;
+		}
 	}
+}
+.videouri {
+	.flex-container {
+		overflow: hidden;
+		height: 100%;
+		@media only screen and (min-width: 600px) {
+			max-height: 30vw;
+		}
+		video {
+			min-width: 40%;
+			width: 40%;
+			min-height: 100%;
+			box-sizing: border-box;
+			@media only screen and (max-width: 600px) {
+				min-width: 85%;
+				width: 85%;
+			}
+		}
+	}
+}
+.Login-component {
+	z-index: 20000;
+	top: 0;
+	left: 0;
+	height: 120vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+		url(./fundaldate.jpg) no-repeat center center fixed;
+	@media only screen and (max-width: 1100px) {
+		height: 100vh;
+	}
+	@media only screen and (max-width: 600px) {
+		height: 150vh;
+	}
+	@media only screen and (max-width: 500px) {
+		height: 140vh;
+	}
+	@media only screen and (max-width: 400px) {
+		height: 130vh;
+	}
+	@media only screen and (max-width: 380px) {
+		height: 125vh;
+	}
+	overflow: visible;
+}
+.btn-primary {
+	background-attachment: $mov;
+}
+.modal-content {
+	background-color: #d5ddfd;
+}
+.modal-body {
+	border-bottom: 1px solid $mov;
+	text-align: center;
+}
+.modal-header {
+	border-bottom: 1px solid $mov;
+	.modal-title {
+		margin-left: 50%;
+		transform: translateX(-50%);
+		white-space: nowrap;
+	}
+}
+.imagini {
+	margin-top: 20px;
+	img {
+		cursor: pointer;
+		@media only screen and (min-width: 600px) {
+			width: 50%;
+			transform: translateX(50%);
+		}
+	}
+}
+.animate {
+	animation: animatieinima 0.5s;
+}
+@keyframes animatieinima {
+	0% {
+		opacity: 0;
+		transform: scale(0.7);
+	}
+	66% {
+		transform: scale(1.5);
+		opacity: 0.66;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+.fundalstanga {
+	position: absolute;
+	background-color: #b4c1ef;
+	top: 0;
+	left: 0;
+	width: 5%;
+	height: 100vh;
+	z-index: 0;
+	@media only screen and (min-width: 600px) {
+		height: 150vh;
+	}
+	@media only screen and (max-width: 1000px) {
+		height: 130vh;
+	}
+	@media only screen and (max-width: 500px) {
+		height: 110vh;
+	}
+}
+.fundaldreapta {
+	position: absolute;
+	background-color: #b4c1ef;
+	top: 0;
+	right: 0;
+	width: 5%;
+	height: 100vh;
+	z-index: 0;
+	@media only screen and (min-width: 600px) {
+		height: 150vh;
+	}
+	@media only screen and (max-width: 1000px) {
+		height: 130vh;
+	}
+	@media only screen and (max-width: 500px) {
+		height: 110vh;
+	}
+}
+.footercontent {
+	box-sizing: border-box;
+	width: 50%;
+	transform: translateX(50%) translateY(100px);
+	white-space: nowrap;
+	align-items: center;
+	@media only screen and (max-width: 500px) {
+		width: 90%;
+		transform: translateY(80px);
+		margin-left: 5%;
+	}
+	img {
+		width: 75%;
+		float: left;
+	}
+	.inimafooter {
+		width: 25%;
+	}
+}
+.site-header-inner {
+	z-index: 1;
 }
