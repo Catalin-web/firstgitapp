@@ -39,7 +39,7 @@
 		"heroku-postbuild": "yarn install-client && yarn build-client",
 		"start": "node app.js",
 		"dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon app.js\" \"NODE_ENV=dev PORT=8000 react-scripts start\"",
-		"build": "react-scripts build && echo '/* /index.html  200' | cat >build/_redirects",
+		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"start2": "react-scripts start"
