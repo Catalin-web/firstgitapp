@@ -1,16 +1,19 @@
+<!-- @format -->
+
 # Pandating
 
-
-Pandating is a video conference website that lets you go on virtual dates in which you answer questions about different topics.
+Pandating is a video conference website that lets you go on virtual
+dates in which you answer questions about different topics.
 
 Developed with ReactJS, Node.js, SocketIO.
 
-
 ### Website
-Try Pandating here [pandating.herokuapp.com](https://pandating.herokuapp.com/)
 
+Try Pandating here
+[pandating.netlify.com](https://pandating.netlify.com/)
 
 ### Features
+
 - No account needed
 - Unlimited users
 - Messaging chat and video streaming in real-time
