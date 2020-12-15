@@ -27,7 +27,7 @@ var connections = {};
 const peerConnectionConfig = {
 	iceServers: [
 		// { 'urls': 'stun:stun.services.mozilla.com' },
-		{ urls: 'stun:stun.pandating.netlify.app' },
+		{ urls: 'stun:stun.l.google.com:19302' },
 	],
 };
 var socket = null;
