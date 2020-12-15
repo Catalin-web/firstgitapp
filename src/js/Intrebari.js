@@ -110,7 +110,7 @@ function Intrebari() {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 	const intrebari = [
-		'In acest date trebuie sa raspundeti la niste intrebari.',
+		'In this date you have to answer some questions.',
 		'What ‘real happiness’ mean to you?',
 		'What discovery do you think would completely change people’s lives?',
 		'What do you want to achieve in the future?',
