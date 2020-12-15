@@ -21,7 +21,7 @@ import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Video.css';
 import style from './style/css.css';
-const server_url = 'https://pandating.netlify.app/';
+const server_url = 'https://pandating.herokuapp.com/';
 var socketId = null;
 var connections = {};
 const peerConnectionConfig = {
