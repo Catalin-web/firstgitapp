@@ -21,13 +21,13 @@ import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Video.css';
 import style from './style/css.css';
-const server_url = 'https://pandating.netlify.com/';
+const server_url = 'https://pandating.netlify.app/';
 var socketId = null;
 var connections = {};
 const peerConnectionConfig = {
 	iceServers: [
 		// { 'urls': 'stun:stun.services.mozilla.com' },
-		{ urls: 'stun:stun.l.google.com:19302' },
+		{ urls: 'stun:stun.l.google.com:19303' },
 	],
 };
 var socket = null;
