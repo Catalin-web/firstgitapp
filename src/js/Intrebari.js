@@ -227,6 +227,12 @@ function Intrebari() {
 		setImg1(imagine1[0]);
 	};
 	useEffect(() => {
+		document.querySelector(
+			'body',
+		).style.background = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+		url('https://images.pexels.com/photos/310452/pexels-photo-310452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+			no-repeat center center fixed`;
+
 		setInterval(() => {
 			if (allow.current && document.querySelector('.unvideo')) {
 				pornire();
@@ -234,6 +240,9 @@ function Intrebari() {
 				allow.current = false;
 			}
 		}, 1000);
+		return () => {
+			document.querySelector('body').style.background = `none`;
+		};
 	}, []);
 
 	return (

@@ -142,43 +142,7 @@ body {
 }
 
 .Login-component {
-  z-index: 20000;
-  top: 0;
-  left: 0;
-  height: 120vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url(./fundaldate.jpg) no-repeat center center fixed;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./fundaldate.jpg) no-repeat center center fixed;
-  overflow: visible;
-}
-
-@media only screen and (max-width: 1100px) {
-  .Login-component {
-    height: 100vh;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .Login-component {
-    height: 150vh;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .Login-component {
-    height: 140vh;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .Login-component {
-    height: 130vh;
-  }
-}
-
-@media only screen and (max-width: 380px) {
-  .Login-component {
-    height: 125vh;
-  }
+  padding-bottom: 30%;
 }
 
 .btn-primary {
